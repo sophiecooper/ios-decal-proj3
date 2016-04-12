@@ -27,22 +27,33 @@ class PhotosCollectionViewController: UICollectionViewController {
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         let photoCell = collectionView.dequeueReusableCellWithReuseIdentifier("photoCell", forIndexPath: indexPath) as! PhotoCell;
-        let currentPhoto: Photo!;
         if (photos != nil) {
-            currentPhoto = photos[(indexPath.section * 3) + indexPath.item];
+            let currentPhoto: Photo! = photos[(indexPath.section * 3) + indexPath.item];
             loadImageForCell(currentPhoto, imageView: photoCell.imageView)
         }
-        return PhotoCell;
+        return photoCell;
     }
     
+    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 3;
+    }
     
+    override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        if (photos != nil) {
+            return photos.count / 3;
+        } else {
+            return 0;
+        }
+    }
     
     
     
     /* Creates a session from a photo's url to download data to instantiate a UIImage. 
        It then sets this as the imageView's image. */
     func loadImageForCell(photo: Photo, imageView: UIImageView) {
-        
+        let url = NSURL(string: photo.url);
+        let photoData = NSData(contentsOfURL: url!);
+        imageView.image = UIImage(data: photoData!);
     }
     
     /* Completion handler for API call. DO NOT CHANGE */

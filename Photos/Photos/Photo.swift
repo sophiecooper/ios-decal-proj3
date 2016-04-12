@@ -20,7 +20,7 @@ class Photo {
     init (data: NSDictionary) {
         self.username = data.valueForKey("user")?.valueForKey("username") as! String
         self.likes = data.valueForKey("likes")?.valueForKey("count") as! Int;
-        self.url = data.valueForKey("images")?.valueForKey("standard_resolution") as! String;
+        self.url = data.valueForKey("images")?.valueForKey("standard_resolution")?.valueForKey("url") as! String;
         
     }
 

@@ -24,20 +24,20 @@ class InstagramAPI {
          */
         // FILL ME IN
         var url: NSURL = Utils.getPopularURL()
-        
-        var dictArray: [Dictionary<String, Int>] = []
-        
-        var PhotoArray: [Photo] = []
 
         let task = NSURLSession.sharedSession().dataTaskWithURL(url) {
             (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
             if error == nil {
                 //FIX ME
-                var photos: [Photo]!
+                var photos: [Photo]! = []
                 do {
                     let feedDictionary = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
                     // FILL ME IN, REMEMBER TO USE FORCED DOWNCASTING
-                    
+                    let dictionaryArray = feedDictionary.valueForKey("data");
+                    for item in dictionaryArray as! [NSDictionary] {
+                        let currPhoto: Photo! = Photo(data: item);
+                        photos.append(currPhoto)
+                    }
                     
                     
                     // DO NOT CHANGE BELOW
