@@ -23,7 +23,11 @@ class InstagramAPI {
          *       d. Wait for completion of Photos array
          */
         // FILL ME IN
-        var url: NSURL
+        var url: NSURL = Utils.getPopularURL()
+        
+        var dictArray: [Dictionary<String, Int>] = []
+        
+        var PhotoArray: [Photo] = []
 
         let task = NSURLSession.sharedSession().dataTaskWithURL(url) {
             (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
@@ -33,6 +37,7 @@ class InstagramAPI {
                 do {
                     let feedDictionary = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
                     // FILL ME IN, REMEMBER TO USE FORCED DOWNCASTING
+                    
                     
                     
                     // DO NOT CHANGE BELOW
@@ -48,5 +53,6 @@ class InstagramAPI {
             }
         }
         task.resume()
+        
     }
 }
