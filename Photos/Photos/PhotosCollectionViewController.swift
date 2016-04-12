@@ -49,7 +49,7 @@ class PhotosCollectionViewController: UICollectionViewController {
     @IBAction func unwindToPhotoFeed(segue: UIStoryboardSegue) {}
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        var nextView = segue.destinationViewController as! PhotoDetailViewController;
+        let nextView = segue.destinationViewController as! PhotoDetailViewController;
         let cell = sender as! UICollectionViewCell
         let indexPath = collectionView!.indexPathForCell(cell)
         let cellInfo: Photo! = photos[(indexPath!.section * 3) + indexPath!.item];
