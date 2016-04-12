@@ -69,6 +69,10 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AR6-nf-G60">
                                 <rect key="frame" x="141" y="76" width="319" height="319"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="319" id="h7c-NN-qhc"/>
+                                    <constraint firstAttribute="height" constant="319" id="j3l-Yf-ybI"/>
+                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Likes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sSt-SS-iK9">
                                 <rect key="frame" x="204" y="407" width="40" height="21"/>
@@ -108,6 +112,7 @@
                         <outlet property="imageLikes" destination="sSt-SS-iK9" id="HD5-3x-iRP"/>
                         <outlet property="imageUsername" destination="0KI-9j-T3f" id="OBz-eB-v1N"/>
                         <outlet property="imageView" destination="AR6-nf-G60" id="bM7-oZ-7Kb"/>
+                        <outlet property="likeButton" destination="Wi9-Y3-Htq" id="biL-ab-hMc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3cy-Jp-KjG" userLabel="First Responder" sceneMemberID="firstResponder"/>
