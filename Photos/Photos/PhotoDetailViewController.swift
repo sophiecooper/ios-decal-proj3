@@ -18,8 +18,12 @@ class PhotoDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         print(selectedPhoto)
-        imageUsername!.text = selectedPhoto[0];
+        
+        let url = NSURL(string: selectedPhoto[0]);
+        let photoData = NSData(contentsOfURL: url!);
+        imageView.image = UIImage(data: photoData!);
+        
+        imageUsername!.text = selectedPhoto[1];
+        imageLikes!.text = selectedPhoto[2];
     }
-    
-    
 }
