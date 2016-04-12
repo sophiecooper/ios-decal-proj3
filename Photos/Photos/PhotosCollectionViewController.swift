@@ -11,11 +11,6 @@ import UIKit
 class PhotosCollectionViewController: UICollectionViewController {
     var photos: [Photo]!
     
-    var selectedUrl: String!
-    var selectedLikes: Int!
-    var selectedUsername: String!
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -51,21 +46,18 @@ class PhotosCollectionViewController: UICollectionViewController {
         }
     }
     
+
     
-    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        //var cell = collectionView.cellForItemAtIndexPath(indexPath)
-        let cell: Photo! = photos[(indexPath.section * 3) + indexPath.item];
-        print(cell.username);
-        print(cell.url);
-        print(cell.likes);
-        
-        selectedUrl = cell.url as String;
-        selectedLikes = cell.likes as Int;
-        selectedUsername = cell.username as String;
-        
-        
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        var nextView = segue.destinationViewController as! PhotoDetailViewController;
+        let cell = sender as! UICollectionViewCell
+        let indexPath = collectionView!.indexPathForCell(cell)
+        let cellInfo: Photo! = photos[(indexPath!.section * 3) + indexPath!.item];
+        print(cellInfo.url);
+        print(cellInfo.username);
+        print(cellInfo.likes);
+        nextView.selectedPhoto = [cellInfo.url, cellInfo.username, String(cellInfo.likes)];
     }
-    
     
     
     /* Creates a session from a photo's url to download data to instantiate a UIImage. 

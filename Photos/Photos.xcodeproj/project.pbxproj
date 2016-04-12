@@ -15,6 +15,7 @@
 		3A1683A31BE9B717009F39C5 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1683A21BE9B717009F39C5 /* Utils.swift */; };
 		3A1683A71BE9C593009F39C5 /* InstagramAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1683A61BE9C593009F39C5 /* InstagramAPI.swift */; };
 		3A1683A91BE9C5A7009F39C5 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1683A81BE9C5A7009F39C5 /* Photo.swift */; };
+		63A12D9B1CBD7639006E18A8 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A12D9A1CBD7639006E18A8 /* PhotoDetailViewController.swift */; };
 		63C332EA1CBCBF7500B6530D /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C332E91CBCBF7500B6530D /* PhotoCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		3A1683A21BE9B717009F39C5 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		3A1683A61BE9C593009F39C5 /* InstagramAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstagramAPI.swift; sourceTree = "<group>"; };
 		3A1683A81BE9C5A7009F39C5 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		63A12D9A1CBD7639006E18A8 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
 		63C332E91CBCBF7500B6530D /* PhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				3A1683911BE9B642009F39C5 /* PhotosCollectionViewController.swift */,
+				63A12D9A1CBD7639006E18A8 /* PhotoDetailViewController.swift */,
 				63C332E91CBCBF7500B6530D /* PhotoCell.swift */,
 			);
 			name = Views;
@@ -174,6 +177,7 @@
 				3A1683921BE9B642009F39C5 /* PhotosCollectionViewController.swift in Sources */,
 				3A1683901BE9B642009F39C5 /* AppDelegate.swift in Sources */,
 				3A1683A31BE9B717009F39C5 /* Utils.swift in Sources */,
+				63A12D9B1CBD7639006E18A8 /* PhotoDetailViewController.swift in Sources */,
 				3A1683A71BE9C593009F39C5 /* InstagramAPI.swift in Sources */,
 				63C332EA1CBCBF7500B6530D /* PhotoCell.swift in Sources */,
 				3A1683A91BE9C5A7009F39C5 /* Photo.swift in Sources */,
