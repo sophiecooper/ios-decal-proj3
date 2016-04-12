@@ -46,7 +46,7 @@ class PhotosCollectionViewController: UICollectionViewController {
         }
     }
     
-
+    @IBAction func unwindToPhotoFeed(segue: UIStoryboardSegue) {}
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         var nextView = segue.destinationViewController as! PhotoDetailViewController;
