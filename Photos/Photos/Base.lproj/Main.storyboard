@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Photos Collection View Controller-->
@@ -26,14 +27,21 @@
                                     <rect key="frame" x="0.0" y="0.0" width="203" height="179"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eS8-BQ-vu3">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eS8-BQ-vu3">
                                             <rect key="frame" x="8" y="8" width="187" height="163"/>
                                         </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <constraints>
+                                    <constraint firstAttribute="topMargin" secondItem="eS8-BQ-vu3" secondAttribute="top" id="D1u-nG-g5s"/>
+                                    <constraint firstItem="eS8-BQ-vu3" firstAttribute="centerX" secondItem="jtn-dg-Zej" secondAttribute="centerX" id="bGU-e5-caE"/>
+                                    <constraint firstAttribute="leadingMargin" secondItem="eS8-BQ-vu3" secondAttribute="leading" id="whT-sE-3Td"/>
+                                    <constraint firstItem="eS8-BQ-vu3" firstAttribute="centerY" secondItem="jtn-dg-Zej" secondAttribute="centerY" id="zoL-x1-z0z"/>
+                                </constraints>
                                 <connections>
                                     <outlet property="imageView" destination="eS8-BQ-vu3" id="QQk-EJ-ubB"/>
+                                    <segue destination="Qr8-LQ-tgi" kind="showDetail" id="WIt-4l-KIB"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -45,7 +53,61 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="280" y="234"/>
+            <point key="canvasLocation" x="56" y="234"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Hdc-9h-KR7">
+            <objects>
+                <viewController id="Qr8-LQ-tgi" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3Ue-51-vwH"/>
+                        <viewControllerLayoutGuide type="bottom" id="aBX-TP-AIi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zSw-u3-Mwq">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AR6-nf-G60">
+                                <rect key="frame" x="141" y="76" width="319" height="319"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0KI-9j-T3f">
+                                <rect key="frame" x="141" y="47" width="319" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="319" id="f1r-t2-E1D"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wi9-Y3-Htq">
+                                <rect key="frame" x="145" y="403" width="39" height="30"/>
+                                <state key="normal" title="Heart"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Likes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sSt-SS-iK9">
+                                <rect key="frame" x="204" y="407" width="40" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0KI-9j-T3f" firstAttribute="trailing" secondItem="AR6-nf-G60" secondAttribute="trailing" id="CMd-X9-UJ4"/>
+                            <constraint firstItem="AR6-nf-G60" firstAttribute="top" secondItem="0KI-9j-T3f" secondAttribute="bottom" constant="8" symbolic="YES" id="ItM-UY-283"/>
+                            <constraint firstItem="0KI-9j-T3f" firstAttribute="leading" secondItem="AR6-nf-G60" secondAttribute="leading" id="LYJ-Tu-N2X"/>
+                            <constraint firstItem="0KI-9j-T3f" firstAttribute="centerX" secondItem="zSw-u3-Mwq" secondAttribute="centerX" id="MY8-TS-oAX"/>
+                            <constraint firstItem="sSt-SS-iK9" firstAttribute="leading" secondItem="Wi9-Y3-Htq" secondAttribute="trailing" constant="20" id="YK0-xl-NKQ"/>
+                            <constraint firstItem="Wi9-Y3-Htq" firstAttribute="leading" secondItem="zSw-u3-Mwq" secondAttribute="leading" constant="145" id="g4b-UT-MW9"/>
+                            <constraint firstItem="0KI-9j-T3f" firstAttribute="top" secondItem="3Ue-51-vwH" secondAttribute="bottom" constant="27" id="m7C-L7-zfe"/>
+                            <constraint firstItem="Wi9-Y3-Htq" firstAttribute="baseline" secondItem="sSt-SS-iK9" secondAttribute="baseline" id="qPQ-g1-r7C"/>
+                            <constraint firstItem="aBX-TP-AIi" firstAttribute="top" secondItem="Wi9-Y3-Htq" secondAttribute="bottom" constant="167" id="tku-43-MlI"/>
+                            <constraint firstItem="Wi9-Y3-Htq" firstAttribute="top" secondItem="AR6-nf-G60" secondAttribute="bottom" constant="8" symbolic="YES" id="yhl-9w-oPU"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3cy-Jp-KjG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="778" y="234"/>
         </scene>
     </scenes>
 </document>

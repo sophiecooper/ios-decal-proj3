@@ -11,6 +11,11 @@ import UIKit
 class PhotosCollectionViewController: UICollectionViewController {
     var photos: [Photo]!
     
+    var selectedUrl: String!
+    var selectedLikes: Int!
+    var selectedUsername: String!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -44,6 +49,21 @@ class PhotosCollectionViewController: UICollectionViewController {
         } else {
             return 0;
         }
+    }
+    
+    
+    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        //var cell = collectionView.cellForItemAtIndexPath(indexPath)
+        let cell: Photo! = photos[(indexPath.section * 3) + indexPath.item];
+        print(cell.username);
+        print(cell.url);
+        print(cell.likes);
+        
+        selectedUrl = cell.url as String;
+        selectedLikes = cell.likes as Int;
+        selectedUsername = cell.username as String;
+        
+        
     }
     
     
