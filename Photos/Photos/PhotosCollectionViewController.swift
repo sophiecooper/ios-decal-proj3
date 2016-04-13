@@ -40,7 +40,7 @@ class PhotosCollectionViewController: UICollectionViewController {
     
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         if (photos != nil) {
-            return photos.count / 3;
+            return photos.count/3;
         } else {
             return 0;
         }
